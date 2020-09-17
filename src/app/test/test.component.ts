@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
     <h2>
       Welcome {{name}}
     <h2>
+
     <input [id]="myId" type="text" value="Angular">
     <input bind-disabled="isDisabled" id="{{myId}}" type="text" value="Angular">
+    
     <button (click)='buttonClicked($event)'>Greet</button>
     <p>Button Clicked {{count}} Times </p>
     {{greeting}}
