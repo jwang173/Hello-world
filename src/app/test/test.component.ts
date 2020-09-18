@@ -19,6 +19,29 @@ import { Component, OnInit } from '@angular/core';
     <button (click)="logMessage(myInput.value)">log</button>
 
     <input [(ngModel)]="work" type="text">
+ 
+    <div *ngIf="displayName; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <h3>
+        Structural directive
+      </h3>
+    </ng-template>
+    <ng-template #elseBlock>
+      <h3>
+        Directive is hidden
+      </h3>
+    </ng-template>
+
+    <div [ngSwitch] = "color">
+      <div *ngSwitchCase="'red'">You pick red</div>
+      <div *ngSwitchCase="'green'">You pick green</div>
+      <div *ngSwitchCase="'blue'">You pick blue</div>
+      <div *ngSwitchDefault>Pick again</div>
+    </div>
+
+    <div *ngFor="let color of colors; even as e">
+      <h2>{{e}} {{color}}</h2>
+    </div>
             `,
   // templateUrl: './test.component.html',
   // styleUrls: ['./test.component.css']
@@ -55,4 +78,9 @@ export class TestComponent implements OnInit {
     console.log(value);
   }
 
+  displayName = true;
+
+  public color = "orange";
+
+  public colors = ["red","blue","green","yellow"];
 }
