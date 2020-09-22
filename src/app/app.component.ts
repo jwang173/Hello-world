@@ -12,7 +12,13 @@ import { ClockComponent } from './clock/clock.component';
   // entryComponents: [ClockComponent],
 })
 export class AppComponent {
-  title:string = 'Hello-world';
+  // title:string = 'Hello-world';
+
+  title = 'app';
+
+  public name = "Jimmy";
+
+  public message = "";
   // time:string='';
   // @ViewChild('clockContainer', {read: ViewContainerRef}) container;
   // componentRef: ComponentRef<ClockComponent>;
